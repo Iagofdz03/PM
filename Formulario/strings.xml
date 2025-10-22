@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Formulario Interactivo</string>
+
+    <string name="label_pais">País</string>
+
+    <string-array name="paises">
+        <item>España</item>
+        <item>Reino Unido</item>
+        <item>Francia</item>
+        <item>Portugal</item>
+        <item>Japón</item>
+        <item>Alemania</item>
+    </string-array>
+</resources>
