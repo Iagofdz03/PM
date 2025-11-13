@@ -1,0 +1,53 @@
+package com.example.checkincompany
+
+import android.content.Intent
+import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+
+class AvisosActivity : AppCompatActivity() {
+
+    private lateinit var tvUltimoAviso: TextView
+    private lateinit var tvAvisoDinamico: TextView
+    private lateinit var btnEnviarAviso: Button
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_avisos)
+
+        tvUltimoAviso = findViewById(R.id.tvUltimoAviso)
+        tvAvisoDinamico = findViewById(R.id.tvAvisoDinamico)
+        btnEnviarAviso = findViewById(R.id.btnEnviarAviso)
+
+        btnEnviarAviso.setOnClickListener {
+            AvisoUrgenteDialog().show(supportFragmentManager, "AvisoUrgente")
+        }
+    }
+
+    // Método para actualizar aviso dinámico desde el dialogo
+    fun actualizarAviso(texto: String) {
+        tvAvisoDinamico.text = texto
+    }
+
+    // -------------------
+    // Menú global
+    // -------------------
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_principal, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.menu_inicio -> startActivity(Intent(this, MainActivity::class.java))
+            R.id.menu_avisos -> startActivity(Intent(this, AvisosActivity::class.java))
+            R.id.menu_perfil -> startActivity(Intent(this, PerfilActivity::class.java))
+            R.id.menu_cerrar -> Toast.makeText(this, "Sesión cerrada correctamente", Toast.LENGTH_SHORT).show()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+}
