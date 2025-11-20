@@ -1,0 +1,24 @@
+1. Función de los archivos principales
+activity_main.xml
+Archivo de layout principal de la actividad. Contiene los elementos de la interfaz que se muestran al iniciar la app y suele incluir un contenedor (NavHostFragment) para los fragments y el AppBarLayout.
+content_main.xml
+Layout específico que se incluye dentro de activity_main.xml. Contiene los elementos principales de la interfaz, como botones, textos o RecyclerView, dentro de la actividad.
+fragment_first.xml
+Layout de la interfaz del primer fragmento. Define los componentes que se mostrarán cuando este fragmento esté activo.
+fragment_second.xml
+Layout de la interfaz del segundo fragmento. Igual que el anterior, pero para el segundo fragmento.
+nav_graph.xml
+Archivo de navegación. Define la estructura de navegación de la app, es decir, los fragments y las acciones que permiten pasar de uno a otro.
+menu_main.xml
+Define el menú de opciones que se muestra en la AppBar (barra superior), como iconos de ajustes o búsquedas.
+MainActivity.kt
+Clase principal de la app. Gestiona la actividad principal, controla la navegación entre fragments y enlaza el layout activity_main.xml.
+FirstFragment.kt
+Clase que controla el primer fragmento. Maneja la lógica y eventos de la interfaz definida en fragment_first.xml.
+SecondFragment.kt
+Clase que controla el segundo fragmento, igual que el anterior, pero para fragment_second.xml.
+
+2. Definiciones breves
+Fragmento: Componente modular de interfaz que se puede reutilizar en diferentes actividades.
+FloatingActionButton (FAB): Botón circular flotante que destaca acciones principales en la pantalla.
+AppBarLayout: Contenedor para la barra de herramientas superior (Toolbar) que permite comportamientos como desplazamiento o colapso.
